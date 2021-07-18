@@ -30,7 +30,8 @@
     "build": "yarn run clean && yarn run build:lib && yarn run build:types",
     "build:lib": "rollup -c",
     "build:types": "tsc -p tsconfig.dts.json --outDir dist --declaration --emitDeclarationOnly",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -70,11 +71,6 @@
   "files": [
     "dist"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "publishConfig": {
     "access": "public"
   },
