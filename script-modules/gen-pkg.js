@@ -23,10 +23,7 @@ export function getPkgJsonBaseContents(pkg) {
   ];
   const pkgEntries = ["main", "module", "types"];
 
-  const contents = {
-    name: pkg.name,
-    version: pkg.version,
-  };
+  const contents = {};
 
   for (const e of reserved) {
     contents[e] = pkg[e];
@@ -35,6 +32,11 @@ export function getPkgJsonBaseContents(pkg) {
   for (const e of pkgEntries) {
     contents[e] = trimDist(pkg[e]);
   }
+
+  contents.exports = {
+    ".": "./es/index.js",
+    "./*": "./es/*.js",
+  };
 
   return contents;
 }

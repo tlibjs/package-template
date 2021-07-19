@@ -27,9 +27,7 @@
     "lint:fix": "eslint --cache --max-warnings 0 --fix",
     "ensure-linted": "eslint --max-warnings 0 .",
     "semantic-release": "semantic-release",
-    "build": "yarn run clean && yarn run build:lib && yarn run build:types",
-    "build:lib": "rollup -c",
-    "build:types": "tsc -p tsconfig.dts.json --outDir dist --declaration --emitDeclarationOnly",
+    "build": "yarn run clean && rollup -c",
     "clean": "rimraf dist",
     "prepare": "husky install"
   },
