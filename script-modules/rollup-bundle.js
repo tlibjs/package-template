@@ -2,6 +2,8 @@ import { compilePlugins } from "./rollup-common";
 import { terser } from "rollup-plugin-terser";
 import { pascalCase } from "pascal-case";
 import pkg from "../package.json";
+import commonjs from "@rollup/plugin-commonjs";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 const GLOBAL_NAMESPACE = pascalCase(pkg.name);
 
@@ -31,5 +33,7 @@ export default {
   plugins: [
     //
     ...compilePlugins(),
+    nodeResolve(),
+    commonjs(),
   ],
 };
