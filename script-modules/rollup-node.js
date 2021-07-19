@@ -5,11 +5,18 @@ import { getPkgJsonBaseContents } from "./gen-pkg";
 import getEntryFiles from "./util/entry-files";
 import { chunkFileNames, typescriptDeclarationDir } from "./util/common";
 
+/** @type { import("rollup").OutputOptions } */
+const commonOutputOptions = {
+  exports: "auto",
+  sourcemap: true,
+  chunkFileNames,
+};
+
 export default {
   input: getEntryFiles(),
   output: [
-    { dir: "dist", format: "cjs", sourcemap: true, chunkFileNames },
-    { dir: "dist/es", format: "es", sourcemap: true, chunkFileNames },
+    { ...commonOutputOptions, dir: "dist", format: "cjs" },
+    { ...commonOutputOptions, dir: "dist/es", format: "es" },
   ],
   plugins: [
     // https://github.com/Septh/rollup-plugin-node-externals

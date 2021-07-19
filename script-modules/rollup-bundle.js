@@ -14,6 +14,11 @@ const FORMATS = [
   "umd",
 ];
 
+/**
+ *
+ * @param { import("rollup").ModuleFormat } format
+ * @returns { import("rollup").OutputOptions }
+ */
 function genOutputs(format) {
   // https://rollupjs.org/guide/en/#outputname
   const name = format === "es" ? undefined : GLOBAL_NAMESPACE;
@@ -24,6 +29,7 @@ function genOutputs(format) {
     file: `dist/bundle/${format}${min ? ".min" : ""}.js`,
     name,
     plugins: min ? [terser()] : undefined,
+    exports: "auto",
   }));
 }
 
