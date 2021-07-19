@@ -1,7 +1,9 @@
 import { compilePlugins } from "./rollup-common";
 import { terser } from "rollup-plugin-terser";
+import { pascalCase } from "pascal-case";
+import pkg from "../package.json";
 
-const GLOBAL_NAMESPACE = "ChineseNumbering";
+const GLOBAL_NAMESPACE = pascalCase(pkg.name);
 
 const FORMATS = [
   //
