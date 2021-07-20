@@ -5,7 +5,7 @@ export function compilePlugins(options) {
   return [
     // https://github.com/rollup/plugins/tree/master/packages/typescript
     typescript({
-      tsconfig: "tsconfig.prod.json",
+      tsconfig: "tsconfig.json",
       sourceMap: true,
       inlineSources: true,
       ...(options || {}).typescript,

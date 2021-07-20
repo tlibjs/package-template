@@ -1,4 +1,10 @@
 {
-  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true
+  },
   "include": ["src/**/*.ts", "test/**/*.ts"]
 }
