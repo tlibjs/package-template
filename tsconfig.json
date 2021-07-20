@@ -6,5 +6,12 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "include": ["src/**/*.ts", "test/**/*.ts", "scripts/**/*.ts"],
+  "ts-node": {
+    "compilerOptions": {
+      "skipLibCheck": true,
+      "target": "ES6",
+      "module": "CommonJS"
+    }
+  }
 }

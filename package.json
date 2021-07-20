@@ -23,6 +23,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test-ts-node": "ts-node scripts/test-ts-node.ts -s --help ./src/some.ts",
     "precommit": "lint-staged",
     "lint:fix": "eslint --cache --max-warnings 0 --fix",
     "ensure-linted": "eslint --max-warnings 0 .",
