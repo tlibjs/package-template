@@ -11,6 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Prevent releasing if the repo is generated from the template and pkg.name not changed
+        run: |
+          repo="$GITHUB_REPOSITORY"
+          pkg=$(node -p 'require("./package.json").name')
+          if [ "$pkg" == "@tlib/package-template" && "$repo" != 'tlibjs/package-template' ]; then
+              echo 'Please modify "name" field in package.json' >&2
+              exit 1
+          else
+              echo "Start releasing package $pkg in repo $repo"
+          fi
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
