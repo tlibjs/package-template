@@ -4,15 +4,15 @@ import { compilePlugins } from "./rollup-common";
 import { getPkgJsonBaseContents } from "./gen-pkg";
 import getEntryFiles from "./util/entry-files";
 import { chunkFileNames, typescriptDeclarationDir } from "./util/common";
+import type { OutputOptions, RollupOptions } from "rollup";
 
-/** @type { import("rollup").OutputOptions } */
-const commonOutputOptions = {
+const commonOutputOptions: Partial<OutputOptions> = {
   exports: "auto",
   sourcemap: true,
   chunkFileNames,
 };
 
-export default {
+const nodeConfig: RollupOptions = {
   input: getEntryFiles(),
   output: [
     { ...commonOutputOptions, dir: "dist", format: "cjs" },
@@ -40,3 +40,5 @@ export default {
     }),
   ],
 };
+
+export default nodeConfig;

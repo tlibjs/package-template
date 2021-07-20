@@ -4,9 +4,11 @@
     "module": "esnext",
     "strict": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "test/**/*.ts", "scripts/**/*.ts"],
+  "include": ["**/*.ts"],
   "ts-node": {
     "compilerOptions": {
       "skipLibCheck": true,
