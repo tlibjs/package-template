@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/tlibjs/package-template/compare/v1.1.0...v1.2.0) (2021-07-20)
+
+### Features
+
+- only keep one tsconfig ([204a972](https://github.com/tlibjs/package-template/commit/204a972af9e205d6313bc4ea556fe42cdb8c4bb3))
+- ts-node demo ([78e6738](https://github.com/tlibjs/package-template/commit/78e6738d25b6ab533aa0100d1b68a41ab9fb8180))
+- use typescript rollup configs ([c25cfdb](https://github.com/tlibjs/package-template/commit/c25cfdbe7b24ca82fd93b0e686d93f523a30355c))
+
 # [1.1.0](https://github.com/tlibjs/package-template/compare/v1.0.0...v1.1.0) (2021-07-20)
 
 ### Bug Fixes
