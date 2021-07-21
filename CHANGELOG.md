@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/tlibjs/package-template/compare/v1.2.0...v1.2.1) (2021-07-21)
+
+### Bug Fixes
+
+- github release actions should check required env vars before releasing ([f70e902](https://github.com/tlibjs/package-template/commit/f70e902fa60782754b44c1f6b274644b2a05fef9)), closes [#1](https://github.com/tlibjs/package-template/issues/1)
+
 # [1.2.0](https://github.com/tlibjs/package-template/compare/v1.1.0...v1.2.0) (2021-07-20)
 
 ### Features
