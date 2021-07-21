@@ -17,10 +17,10 @@ jobs:
           repo="$GITHUB_REPOSITORY"
           pkg=$(node -p 'require("./package.json").name')
           if [ "$pkg" == "@tlib/package-template" ] && [ "$repo" != 'tlibjs/package-template' ]; then
-              echo 'Please modify "name" field in package.json' >&2
-              exit 1
+            echo 'Please modify "name" field in package.json' >&2
+            exit 1
           else
-              echo "Start releasing package $pkg in repo $repo"
+            echo "Start releasing package $pkg in repo $repo"
           fi
       - name: Use Node.js
         uses: actions/setup-node@v1
