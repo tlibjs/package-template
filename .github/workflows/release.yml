@@ -49,4 +49,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn run semantic-release
+        run: |
+          if [ -z "$GITHUB_TOKEN" ]; then
+            echo 'Unexpected empty GITHUB_TOKEN' >&2
+            exit 1
+          fi
+          if [ -z "$NPM_TOKEN" ]; then
+            echo 'Please set secrets.NPM_TOKEN' >&2
+            exit 1
+          fi
+          yarn run semantic-release
