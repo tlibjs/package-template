@@ -1,5 +1,6 @@
 {
   "name": "@tlib/package-template",
+  "version": "1.2.1",
   "description": "an example package published from template for typescript libraries",
   "license": "MIT",
   "main": "dist/index.js",
@@ -80,6 +81,5 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "version": "1.2.1"
+  }
 }
